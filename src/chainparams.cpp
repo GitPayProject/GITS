@@ -56,11 +56,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x0000067ce17a468321e86fb00d234065a4e37109d188449fc0533f22ea8abac5"));
+    (0, uint256("0x0000019f8494b306e0a97297f218c523f2bfbcefad2e51ade9db3877ec252a6e"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1544526825, // * UNIX timestamp of last checkpoint block
+    1544559713, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     1000        // * estimated number of transactions per day after checkpoint
@@ -72,7 +72,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1544526825,
+    1544559713,
     0,
     100};
 
@@ -81,7 +81,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     (0, uint256("0x00"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1544526825,
+    1544559713,
     0,
     100};
 
@@ -130,11 +130,11 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xb2;
-        pchMessageStart[1] = 0xd4;
-        pchMessageStart[2] = 0xa7;
-        pchMessageStart[3] = 0xc3;
-        vAlertPubKey = ParseHex("0452f16d8bbae639590f3bbb4391e314743287461d6d7734bb6826597059435fd541bbcdba44c3b1f9cc4bd5f39cd07543b10a05a167cccac50388d73a2a92cf24");
+        pchMessageStart[0] = 0xb6;
+        pchMessageStart[1] = 0xa4;
+        pchMessageStart[2] = 0xc5;
+        pchMessageStart[3] = 0xd3;
+        vAlertPubKey = ParseHex("0454dddfeebe9d6440c21d8db5bee15c6db0749772281ec8d1ee3b428a67a44d5c6074bfee1507984f8200f3f52c524e322c3d2349c8a383d8743070a31d502635");
         nDefaultPort = 33358;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nSubsidyHalvingInterval = 210000000;
@@ -148,36 +148,36 @@ public:
         nMaturity = 20;
         nMasternodeCountDrift = 1;
         nMaxMoneyOut = 21000000 * COIN;
-        nLastPOWBlock = 299;
+        nLastPOWBlock = 399;
         nModifierUpdateBlock = 1; // 
 
-	const char* pszTimestamp = "Gitpay - 1544526825 ";
+	const char* pszTimestamp = "Gitpays - 1544559713 ";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04d875f482c0283a65608db81621c6679ca9a918e820513897b93c86d265ed34b156d428f08b06271ae0026885023cbcdc487174d86770cf19d380200a57b55cee") << 	OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04ae10bb2c4995e158fb42b1c2aa765fa290a178f0ce16a11cd90bee1b438d24958f61de2adb361eb7eebda3a17b5baba78d84ec74e5081facd06574ec467d2aeb") << 	OP_CHECKSIG;
 	genesis.vtx.push_back(txNew);
 	genesis.hashPrevBlock = 0;
 	genesis.hashMerkleRoot = genesis.BuildMerkleTree();
 	genesis.nVersion = 1;
-	genesis.nTime    = 1544526825;
+	genesis.nTime    = 1544559713;
    	genesis.nBits    = 0x1e0ffff0;
-    	genesis.nNonce   = 8431019; 	
+    	genesis.nNonce   = 9094995; 	
 
 	//MineGenesis(genesis);
 	
        
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000067ce17a468321e86fb00d234065a4e37109d188449fc0533f22ea8abac5"));
-        assert(genesis.hashMerkleRoot == uint256("0x5c5e678e625078619dd372a4a4efd29a84668eb118661f7a28b39d0f8c82999b"));
+        assert(hashGenesisBlock == uint256("0x0000019f8494b306e0a97297f218c523f2bfbcefad2e51ade9db3877ec252a6e"));
+        assert(genesis.hashMerkleRoot == uint256("0x2a1320b5b7a5b652050c27d55a2a4eb4d7abe9e9863bb709e84f1eda2c9484cb"));
 
         // DNS Seeding
-        vSeeds.push_back(CDNSSeedData("68.183.73.13", "68.183.65.206"));
-	vSeeds.push_back(CDNSSeedData("104.248.131.107", "104.248.139.164"));
-	vSeeds.push_back(CDNSSeedData("104.248.33.237", "104.248.246.155"));
-	vSeeds.push_back(CDNSSeedData("104.248.142.74", ""));
+        vSeeds.push_back(CDNSSeedData("68.183.219.45", "68.183.219.134"));
+	vSeeds.push_back(CDNSSeedData("68.183.219.190", "68.183.219.197"));
+	vSeeds.push_back(CDNSSeedData("68.183.219.177", "68.183.219.186"));
+	vSeeds.push_back(CDNSSeedData("68.183.219.189", ""));
 	
 
         // GITS addresses start with 'B'
@@ -206,8 +206,8 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "jqxYEmWweGXq5WGPzF7N9H1JoCqtaJhShTGRBkaduFXfk9Vwnh";
-        strMasternodePoolDummyAddress = "GUrwSrNFkzgLH21guZdkgTvL5NrhzRoLUi";
+        strSporkKey = "m5qfJvpDsbPLxgE1s1HUmAtqLYTNeLZj5Rz9Ta3kxL12d9dejJ";
+        strMasternodePoolDummyAddress = "GLAwF53ydJPPvYGYCCJg8jC7ZmkHforoZy";
         nStartMasternodePayments = genesis.nTime; 
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
