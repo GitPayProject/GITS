@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GITS
+Comment=GITS P2P Cryptocurrency
+Exec=GITS-qt %u
+Terminal=false
+Type=Application
+Icon=GITS128
+MimeType=x-scheme-handler/GITS;
+Categories=Office;Finance;
+Name[en_US]=GITS-qt.desktop

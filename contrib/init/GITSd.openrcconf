@@ -1,0 +1,26 @@
+# /etc/conf.d/GITSd: config file for /etc/init.d/GITSd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/GITS/GITS.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/GITSd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/GITSd.pid"
+
+# Where to write GITSd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/GITSd"
+
+# User and group to own GITSd process
+#BITCOIND_USER="GITS"
+#BITCOIND_GROUP="GITS"
+
+# Path to GITSd executable
+#BITCOIND_BIN="/usr/bin/GITSd"
+
+# Nice value to run GITSd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
